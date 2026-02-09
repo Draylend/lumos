@@ -21,30 +21,31 @@ class code_parsing extends ActiveChat
         3. create a code for finding out the things that are in between
 
     */
-parse(chat_message)
-    {
-        let regular_text = " ";
-        let parsed_content = " ";
-        let inside_text = false;
-        for (let c of chat_message)
+    parse(chat_message)
         {
-            if (c == '<')
+            let regular_text = " ";
+            let parsed_content = " ";
+            let inside_text = false;
+            for (let c of chat_message)
             {
-                inside_text == true;
-            }
-            if (c == '>')
-            {
-                inside_text = false;
-            }
-            if (inside_text)
-            {
-                parsed_content+=c;
-            }
-            else
-            {
-                regular_text += c;
+                if (c == '<')
+                {
+                    inside_text == true;
+                }
+                if (c == '>')
+                {
+                    inside_text = false;
+                }
+                if (inside_text)
+                {
+                    parsed_content+=c;
+                }
+                else
+                {
+                    regular_text += c;
+                }
             }
         }
-    }
 }
+
 
